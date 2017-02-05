@@ -9,6 +9,16 @@
 import UIKit
 
 class ViewController: UIViewController {
+    @IBOutlet weak var textField: UITextField!
+    @IBOutlet weak var label: UILabel!
+    @IBAction func button(_ sender: Any) {
+        let randNum = arc4random_uniform(6)
+        if textField.text == String(randNum) {
+            label.text = "You're right!"
+        } else {
+            label.text = "Wrong! It was a \(randNum)."
+        }
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
